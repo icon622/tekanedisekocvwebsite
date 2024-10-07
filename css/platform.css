@@ -1,0 +1,152 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #4b4b4b;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    opacity: 0.95;
+}
+
+h2, h3 {
+    color: #333333;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input, select, button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="submit"], button {
+    background-color: #007BFF;
+    color: #ffffff;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="submit"]:hover, button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 5px 15px rgba(0, 91, 187, 0.2);
+}
+
+/* Form Field Focus */
+input:focus, select:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Hover and Focus Effects */
+input:hover, select:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Skill, Experience, and Reference Styles */
+#skillsList div, #experienceList div, #referencesList div {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: box-shadow 0.3s, background-color 0.3s;
+}
+
+#skillsList div:hover, #experienceList div:hover, #referencesList div:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    background-color: #e8e8e8;
+}
+
+/* Edit and Delete Button Styles */
+.edit-button, .delete-button {
+    color: #ffffff;
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.edit-button {
+    background-color: #28a745;
+}
+
+.delete-button {
+    background-color: #dc3545;
+}
+
+.edit-button:hover {
+    background-color: #218838;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+/* Animated Button */
+.animated-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.animated-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 91, 187, 0.2);
+}
+
+/* Box Shadow for Forms */
+.form-group {
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="date"], select {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+input[type="text"]:hover, input[type="email"]:hover, input[type="tel"]:hover, input[type="date"]:hover, select:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Form Group Hover Effects */
+.form-group:hover {
+    background-color: #f7f7f7;
+    padding: 15px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}

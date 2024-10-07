@@ -1,0 +1,142 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header Styles */
+.header-main {
+    background-color: #323131;
+    padding: 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    height: 62px;
+    align-items: center;
+}
+
+.header-main-logo img {
+    height: 60px;
+}
+
+.header-main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.header-main-nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.header-main-nav ul li a:hover {
+    background-color: #444;
+    color: #ffeb3b;
+    border-radius: 5px;
+}
+
+/* Social Media Icons */
+.header-main-sm a {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.header-main-sm-fb, .header-main-sm-ig, .header-main-sm-X {
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    display: inline-block;
+}
+
+.header-main-sm-fb {
+    background-image: url('images/facebook-icon.png');
+}
+
+.header-main-sm-ig {
+    background-image: url('images/instagram-icon.png');
+}
+
+.header-main-sm-X {
+    background-image: url('images/twitter-icon.png');
+}
+
+/* Main Section */
+.main-intro {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.main-intro h1 {
+    font-size: 50px;
+    line-height: 1.2;
+    color: #fffefe;
+    text-transform: uppercase;
+}
+
+.main-intro p {
+    font-size: 20px;
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+/* Quotes Section */
+.main-quotes {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.main-quotes p {
+    font-size: 22px;
+    line-height: 1.6;
+    color: #fdfdfd;
+    opacity: 0.9;
+}
+
+.main-quotes a {
+    text-decoration: none;
+}
+
+.main-quotes button {
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.main-quotes button:hover {
+    background-color: #ffeb3b;
+    color: black;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-main {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-main-nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .main-intro h1 {
+        font-size: 35px;
+    }
+
+    .main-quotes p {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY CV PLATFORM</title>
+   
+    <link rel="stylesheet" href="css/platform.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Styling for the animated button */
+        .animated-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 20px;
+        }
+
+        .animated-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .edit-button, .delete-button {
+            margin-left: 5px;
+            cursor: pointer;
+            color: white;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 12px;
+            background-color: #28a745; /* Green for edit */
+        }
+
+        .delete-button {
+            background-color: #dc3545; /* Red for delete */
+        }
+
+        .edit-button:hover {
+            background-color: #218838;
+        }
+
+        .delete-button:hover {
+            background-color: #c82333;
+        }
+
+        /* Container and Form Styles */
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            opacity: 0.95;
+        }
+
+        h2, h3 {
+            color: #333333;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input, select, button {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"], button {
+            background-color: #007BFF;
+            color: #ffffff;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        input[type="submit"]:hover, button:hover {
+            background-color: #0056b3;
+            box-shadow: 0 5px 15px rgba(0, 91, 187, 0.2);
+        }
+
+        /* Form Field Focus */
+        input:focus, select:focus {
+            outline: none;
+            border-color: #007BFF;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        /* Hover and Focus Effects */
+        input:hover, select:hover {
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Skill, Experience, and Reference Styles */
+        #skillsList div, #experienceList div, #referencesList div {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: box-shadow 0.3s, background-color 0.3s;
+        }
+
+        #skillsList div:hover, #experienceList div:hover, #referencesList div:hover {
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            background-color: #e8e8e8;
+        }
+
+        /* Box Shadow for Forms */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"], input[type="email"], input[type="tel"], input[type="date"], select {
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+        }
+
+        input[type="text"]:hover, input[type="email"]:hover, input[type="tel"]:hover, input[type="date"]:hover, select:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Form Group Hover Effects */
+        .form-group:hover {
+            background-color: #f7f7f7;
+            padding: 15px;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+
+        /* Remove default button styles inside links */
+        a button {
+            text-decoration: none;
+            background-color: inherit;
+            color: inherit;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Personal Details Form</h2>
+    <form id="detailsForm" action="submit_details.php" method="post">
+        <div class="form-group">
+            <label for="surname">Surname:</label>
+            <input type="text" id="surname" name="surname" required>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="name">First Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="cellnumber">Cell Number:</label>
+            <input type="tel" id="cellnumber" name="cellnumber" pattern="[0-9]{10}" placeholder="Enter 10-digit number" required>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="address">Physical Address:</label>
+            <input type="text" id="address" name="address" required>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<h3>Education Details</h3>
+<div class="container">
+    <div class="form-group">
+        <label for="institution">Institution Name:</label>
+        <input type="text" id="institution" name="institution" required>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="degree">Degree:</label>
+        <input type="text" id="degree" name="degree" required>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="fieldofstudy">Field of Study:</label>
+        <input type="text" id="fieldofstudy" name="fieldofstudy" required>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="startdate">Start Date:</label>
+        <input type="date" id="startdate" name="startdate" required>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="enddate">End Date (or Expected):</label>
+        <input type="date" id="enddate" name="enddate" required>
+    </div>
+    <br>
+</div>
+
+<h2>Work Skills</h2>
+<div class="container">
+    <div id="skillsList"></div>
+    <input type="text" id="newSkill" placeholder="Add a new skill">
+    <button type="button" onclick="addSkill()">Add Skill</button>
+</div>
+
+<h2>Experience</h2>
+<div class="container">
+    <div id="experienceList"></div>
+    <input type="text" id="newExperience" placeholder="Add a new experience">
+    <button type="button" onclick="addExperience()">Add Experience</button>
+</div>
+
+<h2>References</h2>
+<div class="container">
+    <div id="referencesList"></div>
+    <input type="text" id="newReference" placeholder="Add a new reference">
+    <button type="button" onclick="addReference()">Add Reference</button>
+</div>
+
+<!-- Animated Button to Print PDF -->
+<div class="container">
+    <button class="animated-button" onclick="generatePDF()">Print PDF</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+    let editingSkillIndex = -1;
+    let editingExperienceIndex = -1;
+    let editingReferenceIndex = -1;
+
+    // Capitalize first letter of inputs
+    document.getElementById("surname").addEventListener("blur", capitalize);
+    document.getElementById("name").addEventListener("blur", capitalize);
+
+    function capitalize(event) {
+        const inputField = event.target;
+        const value = inputField.value.trim();
+        if (value) {
+            inputField.value = value.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
+        }
+    }
+
+    function generatePDF() {
+        // Validate the form
+        if (!validateForm()) return;
+
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+
+        // Get form values
+        const surname = document.getElementById("surname").value;
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const cellnumber = document.getElementById("cellnumber").value;
+        const dob = document.getElementById("dob").value;
+        const address = document.getElementById("address").value;
+        const gender = document.getElementById("gender").value;
+
+        const institution = document.getElementById("institution").value;
+        const degree = document.getElementById("degree").value;
+        const fieldOfStudy = document.getElementById("fieldofstudy").value;
+        const startDate = document.getElementById("startdate").value;
+        const endDate = document.getElementById("enddate").value;
+
+        // Work Skills - Extract only the text node (excluding Edit/Delete)
+        const skills = Array.from(document.querySelectorAll("#skillsList div")).map(skillDiv => {
+            return skillDiv.firstChild.textContent.trim();
+        }).join(", ");
+
+        // Experience - Extract only the text node (excluding Edit/Delete)
+        const experiences = Array.from(document.querySelectorAll("#experienceList div")).map(expDiv => {
+            return expDiv.firstChild.textContent.trim();
+        }).join(", ");
+
+        // References - Extract only the text node (excluding Edit/Delete)
+        const references = Array.from(document.querySelectorAll("#referencesList div")).map(refDiv => {
+            return refDiv.firstChild.textContent.trim();
+        }).join(", ");
+
+        // Add content to the PDF and make titles bold
+        doc.setFont("helvetica", "bold");
+        doc.text(`Personal Details`, 10, 10);
+        doc.setFont("helvetica", "normal");
+        doc.text(`Surname: ${surname}`, 10, 20);
+        doc.text(`First Name: ${name}`, 10, 30);
+        doc.text(`Email Address: ${email}`, 10, 40);
+        doc.text(`Cell Number: ${cellnumber}`, 10, 50);
+        doc.text(`Date of Birth: ${dob}`, 10, 60);
+        doc.text(`Physical Address: ${address}`, 10, 70);
+        doc.text(`Gender: ${gender}`, 10, 80);
+
+        doc.setFont("helvetica", "bold");
+        doc.text(`Education Details`, 10, 100);
+        doc.setFont("helvetica", "normal");
+        doc.text(`Institution Name: ${institution}`, 10, 110);
+        doc.text(`Degree: ${degree}`, 10, 120);
+        doc.text(`Field of Study: ${fieldOfStudy}`, 10, 130);
+        doc.text(`Start Date: ${startDate}`, 10, 140);
+        doc.text(`End Date: ${endDate}`, 10, 150);
+
+        // Add Work Skills
+        doc.setFont("helvetica", "bold");
+        doc.text(`Work Skills`, 10, 170);
+        doc.setFont("helvetica", "normal");
+        doc.text(`Skills: ${skills || "No skills added"}`, 10, 180);
+
+        // Add Experience
+        doc.setFont("helvetica", "bold");
+        doc.text(`Experience`, 10, 200);
+        doc.setFont("helvetica", "normal");
+        doc.text(`Experiences: ${experiences || "No experience added"}`, 10, 210);
+
+        // Add References
+        doc.setFont("helvetica", "bold");
+        doc.text(`References`, 10, 230);
+        doc.setFont("helvetica", "normal");
+        doc.text(`References: ${references || "No references added"}`, 10, 240);
+
+        // Save the PDF
+        doc.save("CV.pdf");
+    }
+
+    // Validation function to check all fields
+    function validateForm() {
+        const requiredFields = [
+            "surname", "name", "email", "cellnumber",
+            "dob", "address", "gender",
+            "institution", "degree", "fieldofstudy",
+            "startdate", "enddate"
+        ];
+        let valid = true;
+
+        requiredFields.forEach(fieldId => {
+            const field = document.getElementById(fieldId);
+            if (!field.value.trim()) {
+                alert(`The field "${fieldId.charAt(0).toUpperCase() + fieldId.slice(1)}" is required.`);
+                valid = false;
+            }
+        });
+
+        return valid;
+    }
+
+    // Function to add a skill to the skills list
+    function addSkill() {
+        const skill = document.getElementById("newSkill").value.trim();
+        if (!skill) return;
+
+        const skillDiv = document.createElement("div");
+        skillDiv.innerHTML = `${skill} 
+            <span class="edit-button" onclick="editSkill(this)">Edit</span>
+            <span class="delete-button" onclick="deleteSkill(this)">Delete</span>`;
+        document.getElementById("skillsList").appendChild(skillDiv);
+        document.getElementById("newSkill").value = "";
+    }
+
+    // Function to edit a skill
+    function editSkill(button) {
+        const skillDiv = button.parentNode;
+        const skillText = skillDiv.firstChild.textContent.trim();
+        document.getElementById("newSkill").value = skillText;
+        editingSkillIndex = Array.from(skillDiv.parentNode.children).indexOf(skillDiv);
+        skillDiv.parentNode.removeChild(skillDiv);
+    }
+
+    // Function to delete a skill
+    function deleteSkill(button) {
+        const skillDiv = button.parentNode;
+        skillDiv.parentNode.removeChild(skillDiv);
+    }
+
+    // Function to add experience
+    function addExperience() {
+        const experience = document.getElementById("newExperience").value.trim();
+        if (!experience) return;
+
+        const experienceDiv = document.createElement("div");
+        experienceDiv.innerHTML = `${experience} 
+            <span class="edit-button" onclick="editExperience(this)">Edit</span>
+            <span class="delete-button" onclick="deleteExperience(this)">Delete</span>`;
+        document.getElementById("experienceList").appendChild(experienceDiv);
+        document.getElementById("newExperience").value = "";
+    }
+
+    // Function to edit experience
+    function editExperience(button) {
+        const experienceDiv = button.parentNode;
+        const experienceText = experienceDiv.firstChild.textContent.trim();
+        document.getElementById("newExperience").value = experienceText;
+        editingExperienceIndex = Array.from(experienceDiv.parentNode.children).indexOf(experienceDiv);
+        experienceDiv.parentNode.removeChild(experienceDiv);
+    }
+
+    // Function to delete experience
+    function deleteExperience(button) {
+        const experienceDiv = button.parentNode;
+        experienceDiv.parentNode.removeChild(experienceDiv);
+    }
+
+    // Function to add a reference
+    function addReference() {
+        const reference = document.getElementById("newReference").value.trim();
+        if (!reference) return;
+
+        const referenceDiv = document.createElement("div");
+        referenceDiv.innerHTML = `${reference} 
+            <span class="edit-button" onclick="editReference(this)">Edit</span>
+            <span class="delete-button" onclick="deleteReference(this)">Delete</span>`;
+        document.getElementById("referencesList").appendChild(referenceDiv);
+        document.getElementById("newReference").value = "";
+    }
+
+    // Function to edit a reference
+    function editReference(button) {
+        const referenceDiv = button.parentNode;
+        const referenceText = referenceDiv.firstChild.textContent.trim();
+        document.getElementById("newReference").value = referenceText;
+        editingReferenceIndex = Array.from(referenceDiv.parentNode.children).indexOf(referenceDiv);
+        referenceDiv.parentNode.removeChild(referenceDiv);
+    }
+
+    // Function to delete a reference
+    function deleteReference(button) {
+        const referenceDiv = button.parentNode;
+        referenceDiv.parentNode.removeChild(referenceDiv);
+    }
+</script>
+</body>
+</html>
